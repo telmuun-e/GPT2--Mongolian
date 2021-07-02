@@ -55,8 +55,8 @@ if __name__ == "__main__":
     ADAM_EPSILON = 1e-6
     WARMUP_SAMPLES = 0
 
-    DATAPATH = "data/cleaned_data/clean_data"
-    MODEL_PATH = "models/pretrained"
+    DATAPATH = "../data/cleaned_data/clean_data"
+    MODEL_PATH = "../model/gpt2_model/pretrained"
 
     set_seed(SEED)
 
@@ -134,5 +134,5 @@ if __name__ == "__main__":
             print(output_text)
 
         model_to_save = model.module if hasattr(model, "module") else model
-        model_to_save.save_pretrained(f"models/checkpoint_{epoch}")
+        model_to_save.save_pretrained(f"../model/gpt2_model/checkpoint_{epoch}")
 

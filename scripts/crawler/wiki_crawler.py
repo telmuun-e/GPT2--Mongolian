@@ -19,7 +19,7 @@ def getLinks(pageUrl):
             html = requests.get('http://mn.wikipedia.org{}'.format(pageUrl), timeout=100)
             bs = BeautifulSoup(html.text, 'html.parser')
             text = bs.find("div", {"class":"mw-content-ltr", "id":"mw-content-text"}).text
-            with open(f"../data/raw/wiki_{f}.txt", "a") as w:
+            with open(f"../../data/raw/wiki_{f}.txt", "a") as w:
                 if len(text) > 30:
                      m += 1
                      w.write(str(text) + os.linesep)

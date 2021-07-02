@@ -4,9 +4,9 @@ from transformers import GPT2Config, GPT2LMHeadModel
 import torch
 import sentencepiece as spm
 
-tokenizer = spm.SentencePieceProcessor(model_file="tokenizer/mn.model")
-config = GPT2Config.from_pretrained("model/model")
-model = GPT2LMHeadModel.from_pretrained("model/model", config=config)
+tokenizer = spm.SentencePieceProcessor(model_file="../model/tokenizer/mn.model")
+config = GPT2Config.from_pretrained("../model/gpt2_model/model")
+model = GPT2LMHeadModel.from_pretrained("../model/gpt2_model/model", config=config)
 
 text = "Монгол"
 tokens = tokenizer.encode(text)

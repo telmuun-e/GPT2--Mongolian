@@ -19,7 +19,7 @@ def getLinks(url):
             bs = BeautifulSoup(html.text, 'html.parser')
             try:
                 text = bs.find("div", {"class":"icontent"}).text
-                with open(f"../data/raw_data/ikon_{f}.txt", "a") as w:
+                with open(f"../../data/raw_data/ikon_{f}.txt", "a") as w:
                     if len(text) > 30:
                         m += 1
                         w.write(str(text) + os.linesep)

@@ -24,7 +24,7 @@ def check_size(data):
 
 if __name__ == "__main__":
 
-    with open(r"../data/raw_data/dnn_0.txt", "r") as r:
+    with open(r"../../data/raw_data/dnn_0.txt", "r") as r:
         data = r.read()
         r.close()
 
@@ -32,5 +32,5 @@ if __name__ == "__main__":
     data = split(data)
     data = check_size(data)
 
-    with open(r'../data/cleaned_data/clean_dnn', 'wb') as fp:
+    with open(r'../../data/cleaned_data/clean_dnn', 'wb') as fp:
         pickle.dump(data, fp)

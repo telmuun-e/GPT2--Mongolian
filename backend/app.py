@@ -44,8 +44,8 @@ def predict():
     return {"prediction":prediction, "status":200}
 
 if __name__ == "__main__":
-    tokenizer = spm.SentencePieceProcessor(model_file="./tokenizer/mn.model")
-    model_path = "./model/model"
+    tokenizer = spm.SentencePieceProcessor(model_file="../model/tokenizer/mn.model")
+    model_path = "../model/gpt2_model/model"
     config = GPT2Config.from_pretrained(model_path)
     model = GPT2LMHeadModel.from_pretrained(model_path, config=config)
     app.run(debug=True, host="0.0.0.0", port=8080)

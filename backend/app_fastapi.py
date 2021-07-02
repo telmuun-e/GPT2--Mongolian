@@ -50,8 +50,8 @@ def predict():
     return {"prediction":prediction, "status":200}
 
 if __name__ == "__main__":
-    tokenizer = spm.SentencePieceProcessor(model_file="/home/app/tokenizer/mn.model")
-    model_path = "/home/app/model/model"
+    tokenizer = spm.SentencePieceProcessor(model_file="../model/tokenizer/mn.model")
+    model_path = "../model/gpt2_model/model"
     config = GPT2Config.from_pretrained(model_path)
     model = GPT2LMHeadModel.from_pretrained(model_path, config=config)
     uvicorn.run(app, host="0.0.0.0", port=8080)

@@ -43,6 +43,6 @@ def predict():
     return {"prediction":prediction, "status":200}
 
 if __name__ == "__main__":
-    tokenizer = spm.SentencePieceProcessor(model_file="tokenizer/mn.model")
-    model = ort.InferenceSession("model/model.onnx")
+    tokenizer = spm.SentencePieceProcessor(model_file="../model/tokenizer/mn.model")
+    model = ort.InferenceSession("../model/gpt2_model/model.onnx")
     app.run(debug=True)

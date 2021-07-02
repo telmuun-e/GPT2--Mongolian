@@ -33,7 +33,7 @@ if __name__ == "__main__":
     d = []
 
     for i in range(11):
-        with open(r"../data/raw_data/wiki_{}.txt".format(i), "r") as r:
+        with open(r"../../data/raw_data/wiki_{}.txt".format(i), "r") as r:
             data = r.read()
             r.close()
 
@@ -45,5 +45,5 @@ if __name__ == "__main__":
         
         d.extend(data)
 
-    with open(r'../data/cleaned_data/clean_wiki', 'wb') as fp:
+    with open(r'../../data/cleaned_data/clean_wiki', 'wb') as fp:
         pickle.dump(d, fp)
