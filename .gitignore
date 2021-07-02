@@ -1,0 +1,5 @@
+data/cleaned_data/*
+data/raw_data/*
+model/gpt2_model/*
+frontend/node_modules/*
+.DS_Store/*
