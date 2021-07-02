@@ -46,7 +46,7 @@ export default {
     },
     methods : {
         predict() {
-             axios.post("/predict", {text:this.text}, {baseURL:"http://0.0.0.0:8080/"},{headers : {"Access-Control-Allow-Origin":"*", "Content-Type" : "application/text"}})//{params: {text : this.text}}, {headers : {"Access-Control-Allow-Origin":"*", "Content-Type" : "application/text"}})
+             axios.post("/predict", {text:this.text}, {baseURL:"http://127.0.0.1:5000/"},{headers : {"Access-Control-Allow-Origin":"*", "Content-Type" : "application/text"}})//{params: {text : this.text}}, {headers : {"Access-Control-Allow-Origin":"*", "Content-Type" : "application/text"}})
             .then(response => {this.APIResult=response.data.prediction;})
         }
     } 
