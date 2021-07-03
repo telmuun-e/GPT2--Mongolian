@@ -44,8 +44,12 @@ def predict():
     return {"prediction":prediction, "status":200}
 
 if __name__ == "__main__":
+    
     tokenizer = spm.SentencePieceProcessor(model_file="../model/tokenizer/mn.model")
-    model_path = "../model/gpt2_model/model"
+    model_path = "../model/gpt2_model/checkpoint_150000"
+
     config = GPT2Config.from_pretrained(model_path)
     model = GPT2LMHeadModel.from_pretrained(model_path, config=config)
+    print("Model loaded successfully")
+
     app.run(debug=True, host="127.0.0.1", port=5000)
